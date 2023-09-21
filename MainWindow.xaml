@@ -1,0 +1,18 @@
+﻿<Window x:Class="ErrorReportsGui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ErrorReportsGui"
+        mc:Ignorable="d"
+        Title="Random Quotes" Height="406" Width="397">
+    <Grid Loaded="Grid_Loaded" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="author_textbox" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" Text="Author" VerticalAlignment="Top" Width="365" TextChanged="TextBox_TextChanged" IsReadOnly="True" Background="White" BorderBrush="White"/>
+        <Button Content="Get Random Quote" HorizontalAlignment="Center" Margin="0,302,0,0" VerticalAlignment="Top" Height="55" Width="385" Click="Button_Click" Cursor="Hand"/>
+        <TextBox x:Name="quote_textbox" HorizontalAlignment="Left" Height="203" TextWrapping="Wrap" Text="Quote" VerticalAlignment="Top" Width="365" TextChanged="TextBox_TextChanged" Margin="0,37,0,0" FontSize="18" FontFamily="Courier New" IsReadOnly="True" BorderBrush="White" Background="White" FontStyle="Italic"/>
+        <TextBlock x:Name="url_textblock" HorizontalAlignment="Left" Margin="0,262,0,0" TextWrapping="Wrap" Text="Open the quote in your browser" VerticalAlignment="Top" Height="23" Width="365" RenderTransformOrigin="0.506,0.521"/>
+    </Grid>
+</Window>
