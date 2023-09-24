@@ -5,14 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ErrorReportsGui"
         mc:Ignorable="d"
-        Title="Random Quotes" Height="406" Width="397">
-    <Grid Loaded="Grid_Loaded" VerticalAlignment="Center" HorizontalAlignment="Center">
+        Title="Random Quotes" Height="479" Width="581">
+    <Window.Resources>
+        <Storyboard x:Key="FadeInStoryboard">
+            <DoubleAnimation
+                Storyboard.TargetProperty="Opacity"
+                Storyboard.TargetName="quote_textbox"
+                From="0"
+                 To="1"
+            Duration="0:0:2" />
+        </Storyboard>
+    </Window.Resources>
+    <Grid Loaded="Grid_Loaded" VerticalAlignment="Center" Height="420" Margin="30,0,0,0" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.005"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="470"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="author_textbox" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" Text="Author" VerticalAlignment="Top" Width="365" TextChanged="TextBox_TextChanged" IsReadOnly="True" Background="White" BorderBrush="White"/>
-        <Button Content="Get Random Quote" HorizontalAlignment="Center" Margin="0,302,0,0" VerticalAlignment="Top" Height="55" Width="385" Click="Button_Click" Cursor="Hand"/>
-        <TextBox x:Name="quote_textbox" HorizontalAlignment="Left" Height="203" TextWrapping="Wrap" Text="Quote" VerticalAlignment="Top" Width="365" TextChanged="TextBox_TextChanged" Margin="0,37,0,0" FontSize="18" FontFamily="Courier New" IsReadOnly="True" BorderBrush="White" Background="White" FontStyle="Italic"/>
-        <TextBlock x:Name="url_textblock" HorizontalAlignment="Left" Margin="0,262,0,0" TextWrapping="Wrap" Text="Open the quote in your browser" VerticalAlignment="Top" Height="23" Width="365" RenderTransformOrigin="0.506,0.521"/>
+        <TextBox x:Name="author_textbox" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" Text="Author" VerticalAlignment="Top" Width="365" TextChanged="TextBox_TextChanged" IsReadOnly="True" Background="White" BorderBrush="White" FontStyle="Italic" FontFamily="Lucida Sans"/>
+        <Button Content="Get Random Quote" HorizontalAlignment="Left" Margin="68,351,0,0" VerticalAlignment="Top" Height="55" Width="385" Click="Button_Click" Cursor="Hand"/>
+        <TextBox x:Name="quote_textbox" HorizontalAlignment="Left" Height="202" TextWrapping="Wrap" Text="Quote" VerticalAlignment="Top" Width="340" TextChanged="TextBox_TextChanged" Margin="1,58,0,0" FontSize="18" IsReadOnly="True" BorderBrush="White" Background="White" FontWeight="Bold">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <TextBlock x:Name="url_textblock" HorizontalAlignment="Left" Margin="7,289,0,0" TextWrapping="Wrap" Text="Open the quote in your browser" VerticalAlignment="Top" Height="23" Width="365" RenderTransformOrigin="0.506,0.521"/>
+        <ComboBox x:Name="ComboBox1" Margin="340,5,-42,0" VerticalAlignment="Top" SelectionChanged="ComboBox_SelectionChanged_1" Height="31"/>
     </Grid>
 </Window>
